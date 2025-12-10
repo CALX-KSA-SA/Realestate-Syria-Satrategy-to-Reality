@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="البوابة الوطنية للاستثمار العقاري - منصة رقمية موحدة لاستكشاف فرص الاستثمار العقاري في سوريا">
+    <meta name="theme-color" content="#6366F1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" as="style">
+    <title>البوابة الوطنية للاستثمار العقاري - سوريا</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --color-bg: #ffffff;
+            --color-bg-light: #F8F9FB;
+            --color-bg-secondary: #EEF2FF;
+            --color-border: #E5E7EB;
+            --color-text: #1F2937;
+            --color-text-secondary: #6B7280;
+            --primary-color: #6366F1;
+            --primary-dark: #4F46E5;
+            --success-color: #10B981;
+            --gradient-purple: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Cairo', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--color-text);
+            background-color: var(--color-bg-light);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header & Navigation */
+        .header {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            white-space: nowrap;
+        }
+
+        .logo-image {
+            height: 35px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--color-text);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+            background: var(--color-bg-secondary);
+        }
+
+        /* Hero Section with Stats */
+        .hero {
+            margin-top: 80px;
+            padding: 4rem 2rem;
+            background: var(--color-bg);
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--color-bg-secondary);
+            color: var(--primary-color);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--color-text);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .hero-description {
+            font-size: 1.125rem;
+            color: var(--color-text-secondary);
+            max-width: 900px;
+            margin: 0 auto 2rem;
+            line-height: 1.8;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            direction: ltr;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--color-text);
+            font-weight: 600;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.125rem;
+            transition: all 0.3s;
+            box-shadow: var(--shadow-md);
+        }
+
+        .cta-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Video Section */
+        .video-section {
+            background: var(--color-bg);
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: var(--shadow-md);
+            margin: 3rem 0;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .video-container {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            background: #1a1a2e;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #1e3a8a 0%, #312e81 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .video-placeholder::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=450&fit=crop') center/cover;
+            opacity: 0.3;
+        }
+
+        .play-button {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .play-button:hover {
+            transform: scale(1.1);
+            background: white;
+        }
+
+        .play-button::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 15px 0 15px 25px;
+            border-color: transparent transparent transparent var(--primary-color);
+            margin-right: -5px;
+        }
+
+        .video-content h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .video-content p {
+            font-size: 1.125rem;
+            color: var(--color-text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: var(--color-text-secondary);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Journey Cards (Process Flow) */
+        .journey-section {
+            background: var(--color-bg);
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: var(--shadow-md);
+            margin: 3rem 0;
+        }
+
+        .journey-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .journey-card {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background: var(--color-bg-light);
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+
+        .journey-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .journey-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--color-bg-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+        }
+
+        .journey-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--color-text);
+        }
+
+        .journey-text {
+            font-size: 0.9375rem;
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Sector Cards with Images */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: var(--color-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .feature-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667EEA 0%, #764BA2 50%, #F093FB 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-image::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.3) 100%);
+        }
+
+        .feature-icon {
+            position: absolute;
+            top: 50%;
+            right: 50%;
+            transform: translate(50%, -50%);
+            font-size: 4rem;
+            z-index: 1;
+            opacity: 0.9;
+        }
+
+        .feature-content {
+            padding: 1.5rem;
+        }
+
+        .feature-number {
+            display: none;
+        }
+
+        .feature-title {
+            font-size: 1.375rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--color-text);
+        }
+
+        .feature-description {
+            font-size: 0.9375rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            padding: 0.5rem 0;
+            padding-right: 1.5rem;
+            position: relative;
+            color: var(--color-text-secondary);
+            font-size: 0.875rem;
+        }
+
+        .feature-list li::before {
+            content: '✓';
+            position: absolute;
+            right: 0;
+            color: var(--success-color);
+            font-weight: bold;
+        }
+
+        /* City Comparison Cards */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .benefit-card {
+            background: var(--color-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s;
+        }
+
+        .benefit-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+
+        .benefit-image {
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+            position: relative;
+        }
+
+        .benefit-content {
+            padding: 1.5rem;
+        }
+
+        .benefit-icon {
+            color: var(--primary-color);
+            font-size: 1.75rem;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+
+        .benefit-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--color-text);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .benefit-text {
+            font-size: 0.9375rem;
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+            display: block;
+        }
+
+        .benefit-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .benefit-stat {
+            text-align: center;
+        }
+
+        .benefit-stat-number {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .benefit-stat-label {
+            font-size: 0.75rem;
+            color: var(--color-text-secondary);
+            margin-top: 0.25rem;
+        }
+
+        /* CTA Section with Gradient */
+        .cta-section {
+            background: var(--gradient-purple);
+            padding: 4rem 2rem;
+            text-align: center;
+            border-radius: 24px;
+            margin: 4rem 0;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            top: -150px;
+            left: -100px;
+        }
+
+        .cta-section::after {
+            content: '';
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            bottom: -125px;
+            left: 50%;
+        }
+
+        .cta-section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section-text {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.8;
+            max-width: 700px;
+            margin-right: auto;
+            margin-left: auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-button-white {
+            display: inline-block;
+            background: white;
+            color: var(--primary-color);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.125rem;
+            transition: all 0.3s;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-button-white:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--color-bg);
+            color: var(--color-text);
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .footer-text {
+            font-size: 0.9375rem;
+            color: var(--color-text-secondary);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.125rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .journey-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .nav-container {
+                padding: 0.75rem 1rem;
+            }
+
+            .logo {
+                font-size: 1.125rem;
+            }
+
+            .logo svg,
+            .logo img {
+                height: 28px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                margin-top: 60px;
+                padding: 2rem 1rem;
+            }
+
+            .hero-badge {
+                font-size: 0.75rem;
+                padding: 0.375rem 1rem;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-description {
+                font-size: 0.9375rem;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .stat-label {
+                font-size: 0.875rem;
+            }
+
+            .section {
+                padding: 2rem 0;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+            }
+
+            .journey-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-section {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .cta-section-title {
+                font-size: 1.75rem;
+            }
+
+            .cta-section-subtitle {
+                font-size: 1.125rem;
+            }
+
+            .cta-section-text {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.5rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .cta-section-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                البوابة الوطنية للاستثمار العقاري
+            </div>
+            <a href="https://calx.sa" target="_blank" rel="noopener noreferrer">
+                <img src="calx-logo-black2.png" alt="CALX" class="logo-image">
+            </a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content fade-in-up">
+                <span class="hero-badge">منصة الاستثمار العقاري الرقمية</span>
+                <h1 class="hero-title">فرص استثمارية واعدة في سوريا</h1>
+                <h2 class="hero-subtitle">البوابة الوطنية للاستثمار العقاري</h2>
+                <p class="hero-description">
+                    منصة إلكترونية شاملة توفر للمستثمرين إمكانية الوصول إلى معلومات دقيقة حول الفرص الاستثمارية العقارية في مختلف المناطق السورية، مع أدوات تحليل متقدمة وخرائط جغرافية تفاعلية.
+                </p>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">14 محافظة</div>
+                        <div class="stat-label">محافظات سورية تضم فرص استثمارية متنوعة</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">185,180 كم²</div>
+                        <div class="stat-label">المساحة الكلية للجمهورية العربية السورية</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">ملتقى 3 قارات</div>
+                        <div class="stat-label">موقع جغرافي فريد يربط آسيا وأوروبا وأفريقيا</div>
+                    </div>
+                </div>
+                
+                <a href="#features" class="cta-button">اكتشف الفرص المتاحة</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="section">
+        <div class="container">
+            <div class="journey-section fade-in-up">
+                <div class="section-header">
+                    <h2 class="section-title">الهدف من المنصة</h2>
+                </div>
+                <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+                    <p style="font-size: 1.125rem; color: var(--color-text-secondary); line-height: 1.8; margin-bottom: 1.5rem;">
+                        تسعى هذه المنصة الرقمية إلى تسهيل عملية الاستثمار العقاري في سوريا من خلال توفير معلومات شاملة وموثوقة عن الأراضي والعقارات المتاحة، مع أدوات تحليلية متطورة تساعد المستثمرين على اتخاذ قرارات مدروسة ومبنية على بيانات دقيقة.
+                    </p>
+                    <p style="font-size: 1.125rem; color: var(--color-text-secondary); line-height: 1.8;">
+                        نوفر واجهة موحدة تجمع كافة المعلومات الضرورية حول العقارات، المخططات التنظيمية، البنية التحتية المتوفرة، والخدمات المحيطة، مما يختصر الوقت والجهد على المستثمرين الراغبين في دخول السوق السوري.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">مراحل الاستثمار عبر المنصة</h2>
+                <p class="section-subtitle">خطوات بسيطة لاكتشاف الفرصة المناسبة وبدء استثمارك العقاري في سوريا بسهولة ويسر.</p>
+            </div>
+            <div class="journey-section fade-in-up">
+                <div class="journey-grid">
+                    <div class="journey-card">
+                        <div class="journey-icon">🗺️</div>
+                        <h3 class="journey-title">تصفح الخريطة التفاعلية</h3>
+                        <p class="journey-text">اكتشف العقارات والأراضي المتاحة في كافة المحافظات السورية من خلال خرائط تفاعلية سهلة الاستخدام</p>
+                    </div>
+                    <div class="journey-card">
+                        <div class="journey-icon">🔍</div>
+                        <h3 class="journey-title">فلتر وبحث متقدم</h3>
+                        <p class="journey-text">حدد معايير البحث الخاصة بك مثل المنطقة، نوع العقار، السعر، والمساحة للوصول لأفضل الخيارات</p>
+                    </div>
+                    <div class="journey-card">
+                        <div class="journey-icon">📊</div>
+                        <h3 class="journey-title">تحليل ومقارنة</h3>
+                        <p class="journey-text">اطلع على المعلومات التفصيلية والبيانات الإحصائية وقارن بين الفرص المختلفة</p>
+                    </div>
+                    <div class="journey-card">
+                        <div class="journey-icon">✅</div>
+                        <h3 class="journey-title">قرار استثماري</h3>
+                        <p class="journey-text">احفظ الفرص المفضلة لديك وتواصل مع الجهات المعنية لبدء الإجراءات</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">الخدمات والإمكانيات المتوفرة</h2>
+                <p class="section-subtitle">مجموعة من الأدوات الرقمية والخدمات الذكية التي تجعل عملية البحث عن الفرص الاستثمارية أكثر سهولة ودقة</p>
+            </div>
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card fade-in-up">
+                    <div class="feature-image">
+                        <div class="feature-icon">🗺️</div>
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">نظام الخرائط الجغرافية الذكي</h3>
+                        <p class="feature-description">منظومة خرائط رقمية شاملة تعرض العقارات في جميع المناطق</p>
+                        <ul class="feature-list">
+                            <li>تصفح العقارات والأراضي المتوفرة</li>
+                            <li>معلومات عن المرافق والخدمات القريبة</li>
+                            <li>بيانات التنظيم ودرجة الجاهزية</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card fade-in-up">
+                    <div class="feature-image">
+                        <div class="feature-icon">📊</div>
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">منصة عرض المشاريع</h3>
+                        <p class="feature-description">
+                            واجهة احترافية لاستعراض المشاريع الاستثمارية المتاحة
+                        </p>
+                        <ul class="feature-list">
+                            <li>معارض صور تفصيلية</li>
+                            <li>بيانات كاملة عن كل مشروع</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card fade-in-up">
+                    <div class="feature-image">
+                        <div class="feature-icon">🔍</div>
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">أداة البحث الذكية</h3>
+                        <p class="feature-description">ابحث عن العقار الأنسب لك بسرعة ودقة</p>
+                        <ul class="feature-list">
+                            <li>فلترة حسب نوع الاستخدام</li>
+                            <li>تحديد النطاق السعري</li>
+                            <li>اختيار المنطقة الجغرافية</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card fade-in-up">
+                    <div class="feature-image">
+                        <div class="feature-icon">💼</div>
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">حسابك الشخصي</h3>
+                        <p class="feature-description">إدارة محفظتك الاستثمارية من مكان واحد</p>
+                        <ul class="feature-list">
+                            <li>قائمة العقارات المحفوظة</li>
+                            <li>متابعة المشاريع المهمة</li>
+                            <li>أداة المقارنة الذكية</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-card fade-in-up">
+                    <div class="feature-image">
+                        <div class="feature-icon">🏗️</div>
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">المخططات التنظيمية</h3>
+                        <p class="feature-description">
+                            استعراض المخططات والتصاميم العمرانية بصورة تفاعلية
+                        </p>
+                        <ul class="feature-list">
+                            <li>نماذج بصرية ثلاثية الأبعاد</li>
+                            <li>معلومات تقنية مفصلة</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="section" id="benefits">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">دور المنصة في دعم التنمية العمرانية</h2>
+                <p class="section-subtitle">نظام رقمي متكامل يسهم في تطوير القطاع العقاري وتشجيع الاستثمارات في سوريا</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card fade-in-up">
+                    <div class="benefit-image"></div>
+                    <div class="benefit-content">
+                        <span class="benefit-icon">⚡</span>
+                        <h3 class="benefit-title">تسهيل الإجراءات</h3>
+                        <p class="benefit-text">
+                            توفير قاعدة بيانات موثوقة وشفافة تمكن المستثمرين من الوصول للمعلومات بسرعة واتخاذ خيارات صائبة
+                        </p>
+                        <div class="benefit-stats">
+                            <div class="benefit-stat">
+                                <div class="benefit-stat-number">100%</div>
+                                <div class="benefit-stat-label">بيانات موثوقة</div>
+                            </div>
+                            <div class="benefit-stat">
+                                <div class="benefit-stat-number">24/7</div>
+                                <div class="benefit-stat-label">وصول دائم</div>
+                            </div>
+                            <div class="benefit-stat">
+                                <div class="benefit-stat-number">آمن</div>
+                                <div class="benefit-stat-label">حماية البيانات</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="benefit-card fade-in-up">
+                    <div class="benefit-image"></div>
+                    <div class="benefit-content">
+                        <span class="benefit-icon">🏗️</span>
+                        <h3 class="benefit-title">المساهمة في التطوير العمراني</h3>
+                        <p class="benefit-text">
+                            ربط المعلومات الجغرافية بالمخططات التنظيمية والمشاريع مما يسهل عمليات التطوير والبناء
+                        </p>
+                        <div class="benefit-stats">
+                            <div class="benefit-stat">
+                                <div class="benefit-stat-number">GIS</div>
+                                <div class="benefit-stat-label">خرائط متقدمة</div>
+                            </div>
+                            <div class="benefit-stat">
+                                <div class="benefit-stat-number">3D</div>
+                                <div class="benefit-stat-label">نماذج ثلاثية</div>
+                            </div>
+                            <div class="benefit-stat">
+                                <div class="benefit-stat-number">دقيق</div>
+                                <div class="benefit-stat-label">تحليل مكاني</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="benefit-card fade-in-up">
+                    <div class="benefit-image"></div>
+                    <div class="benefit-content">
+                        <span class="benefit-icon">🌍</span>
+                        <h3 class="benefit-title">استقطاب رؤوس الأموال</h3>
+                        <p class="benefit-text">
+                            عرض احترافي للفرص الاستثمارية يلبي المعايير الدولية ويسهل على المستثمرين الأجانب فهم السوق
+                        </p>
+                        <div class="benefit-stats">
+                            <div class="benefit-stat">
+                                <div class="benefit-stat-number">متعدد اللغات</div>
+                                <div class="benefit-stat-label">واجهة بعدة لغات</div>
+                            </div>
+                            <div class="benefit-stat">
+                                <div class="benefit-stat-number">عالمي</div>
+                                <div class="benefit-stat-label">معايير دولية</div>
+                            </div>
+                            <div class="benefit-stat">
+                                <div class="benefit-stat-number">شفاف</div>
+                                <div class="benefit-stat-label">معلومات واضحة</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="benefit-card fade-in-up">
+                    <div class="benefit-image"></div>
+                    <div class="benefit-content">
+                        <span class="benefit-icon">🤝</span>
+                        <h3 class="benefit-title">مركز معلومات موحد</h3>
+                        <p class="benefit-text">
+                            نقطة التقاء شاملة تربط المستثمرين مع الجهات المعنية والمطورين في بيئة رقمية واحدة
+                        </p>
+                        <div class="benefit-stats">
+                            <div class="benefit-stat">
+                                <div class="benefit-stat-number">موحد</div>
+                                <div class="benefit-stat-label">منصة واحدة</div>
+                            </div>
+                            <div class="benefit-stat">
+                                <div class="benefit-stat-number">سهل</div>
+                                <div class="benefit-stat-label">واجهة بسيطة</div>
+                            </div>
+                            <div class="benefit-stat">
+                                <div class="benefit-stat-number">متكامل</div>
+                                <div class="benefit-stat-label">حلول شاملة</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="cta-section fade-in-up">
+                <h2 class="cta-section-title">كنوز الاستثمار في سوريا</h2>
+                <p class="cta-section-subtitle">فرصة للاستفادة من السوق العقاري السوري</p>
+                <p class="cta-section-text">سجل الآن في المنصة الوطنية للاستثمار العقاري<br>استكشف الفرص، حلل البيانات، واختر الأنسب لك بكل ثقة.</p>
+                <a href="#" class="cta-button-white">التسجيل في المنصة</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div style="margin-bottom: 2rem;">
+                <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: var(--color-text);">للتواصل: Dani Sinai</h3>
+                <div style="display: flex; flex-direction: column; gap: 0.5rem; align-items: center;">
+                    <p style="font-size: 1rem; color: var(--color-text);">
+                        <strong>واتساب:</strong> <a href="https://wa.me/966599343529" target="_blank" rel="noopener noreferrer" style="color: var(--primary-color); text-decoration: none; font-weight: 600;" dir="ltr">+966 59 934 3529</a>
+                    </p>
+                    <p style="font-size: 1rem; color: var(--color-text);">
+                        <strong>بريد إلكتروني:</strong> <a href="mailto:dsinai@calx.sa" style="color: var(--primary-color); text-decoration: none;">dsinai@calx.sa</a>
+                    </p>
+                </div>
+            </div>
+            <p class="footer-text">© 2025 البوابة الوطنية للاستثمار العقاري - الجمهورية العربية السورية. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease-out';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Header scroll effect
+        let lastScroll = 0;
+        const header = document.querySelector('.header');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                header.style.boxShadow = '0 4px 16px rgba(0, 0, 0, 0.12)';
+            } else {
+                header.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.08)';
+            }
+            
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+</html>
